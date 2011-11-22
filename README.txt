@@ -21,10 +21,10 @@ Examples:
 	$titles = $myScrape->getElements("title", "item");
 	foreach ($titles as $title){ echo $title; }
 	
-	// Extract text from element "a" and attribute "href" within h2-element and display result as links
+	// Extract text from element "a" and attribute "href" within h2-element and use scrapeview
 	$myScrape = new SimpleScrape($url);
 	$scrapes["text"] = $myScrape->getElements("a", "h2");
 	$scrapes["href"] = $myScrape->getAttributes("href", "h2");
 	for($i = 0; $i < count($scrapes["text"]); $i++){
-		echo = $sv->createLink($scrapes["href"][$i], $scrapes["text"][$i]);
+		echo = $myScrapeView->createLink($scrapes["href"][$i], $scrapes["text"][$i]);
 	}
