@@ -1,0 +1,62 @@
+SimpleScrape Class Reference: 
+
+To create new SimpleScrape object use: new SimpleScrape($url)
+
+	Public Member Functions:
+	
+	__construct($url)
+		Constructor.
+
+		This should not be called directly. Use new SimpleScrape($url) instead.
+
+		Parameters:
+			string	$url	URL to the document to scrape
+		
+	getDocument()
+		Get a copy of the scraped document. 
+		
+		Returns:
+			string. A copy of the scraped document. 
+		
+		See also:
+			getElements()
+			getAttributes()
+			
+	getElements($element, $parent = null, $filterAttr = null, $filterAttrValue = null)
+		Fetch specific elements from document. 
+		
+		Parameters:
+			string 	$element 			The name of the element you want to fetch
+			string 	$parent				If this is set, function will only return matching elements that are children of this element. 
+			string 	$filterAttr			(See below)
+			string 	$filterAttrValue		If these are set, function will only return matching elements which also has the matching attribute and value. 
+		
+		Returns:
+			array	An array with the matching results.
+			
+		
+	getAttributes($attribute, $parent = null, $filterAttr = null, $filterAttrValue = null)
+		Fetch specific attributes from document. 
+		
+		Parameters:
+			string 	$attribute 			The name of the attribute you want to fetch
+			string 	$parent				If this is set, function will only return matching elements that are children of this element. 
+			string 	$filterAttr			(See below)
+			string 	$filterAttrValue		If these are set, function will only return matching elements which also has the matching attribute and value. 
+		
+		Returns:
+			array	An array with the matching results.
+	
+	Private Member Functions: 
+	queryDocument($query)
+		Makes queries against document
+		
+		Parameters:
+			string $query 			The query set up by either getElement or getAttribute()
+		
+		Returns:
+			array 	An array with the matching results
+			
+		See also:
+			getElements()
+			getAttributes()
